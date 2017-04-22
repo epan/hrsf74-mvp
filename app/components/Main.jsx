@@ -18,21 +18,17 @@ class Main extends React.Component {
       ]
     };
     this.handleProsChange = this.handleProsChange.bind(this);
-    this.handleConsSubmit = this.handleConsSubmit.bind(this);
+    this.handleConsChange = this.handleConsChange.bind(this);
   }
 
   handleProsChange (event) {
-    event.preventDefault();
     this.setState({prosInput: event.target.value});
     console.log('prosInput is:', this.state.prosInput);
   }
 
-  handleConsSubmit (event) {
-    event.preventDefault();
-    console.log(event.target.value);
-    // console.dir(event);
-    this.state.cons.push(event.target.value); 
-    this.setState({cons: this.state.cons});
+  handleConsChange (event) {
+    this.setState({consInput: event.target.value});
+    console.log('consInput is:', this.state.consInput);
   }
 
   render () {
@@ -48,7 +44,7 @@ class Main extends React.Component {
         <List 
           name={'Cons'} 
           items={this.state.cons} 
-          handleSubmit={this.handleConsSubmit} 
+          handleChange={this.handleConsChange} 
         />
       </div>
     );
