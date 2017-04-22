@@ -4,8 +4,7 @@ import ReactDOM from 'react-dom';
 const Main = () => {
   return (
     <div>
-      <h1>Helloww World</h1>
-      <div>Yeewwww</div>
+      <h1>Prose and Khans</h1>
     </div>
   );
 };
