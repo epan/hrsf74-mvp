@@ -9530,13 +9530,11 @@ var React = __webpack_require__(81);
 var ReactDOM = __webpack_require__(80);
 
 function Main() {
-  React.createElement(
+  return React.createElement(
     'div',
     null,
     'Helloww World'
   );
-  // return (
-  // );
 }
 
 ReactDOM.render(React.createElement(Main, null), document.getElementById('app'));
