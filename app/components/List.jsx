@@ -6,12 +6,13 @@ const List = ({name, items}) => {
     <div>
       <h2>{`${name}`}</h2>
       <ol>
-        {
-          items.map((item, index) => {
-            return <ListItem title={item} key={index}/>;
-          })
-        }
+        {items.map((item, index) => {
+          return <ListItem title={item} key={index}/>;
+        })}
       </ol>
+      <form method="POST">
+        <input id={`input${name}`} type="text"/>
+      </form>
     </div>
   );
 };
