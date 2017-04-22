@@ -10,11 +10,11 @@ const List = ({name, items, handleListInputSubmit}) => {
           return <ListItem title={item} key={index}/>;
         })}
       </ol>
-      <form method="post">
+      <form>
         <input 
           id={`input${name}`} 
           type="text" 
-          onFocus={handleListInputSubmit}
+          onChange={handleListInputSubmit}
         />
       </form>
     </div>

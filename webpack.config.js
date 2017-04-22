@@ -1,5 +1,6 @@
 module.exports = {
   entry: __dirname + '/app/components/Main.jsx',
+  devtool: 'eval',
   output: {
     filename: 'bundle.js',
     path: __dirname + '/public/dist'

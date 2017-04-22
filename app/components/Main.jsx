@@ -15,11 +15,14 @@ class Main extends React.Component {
         'No income'
       ]
     };
-    this.handleListInputSubmit.bind(this);
+    this.handleListInputSubmit = this.handleListInputSubmit.bind(this);
   }
 
-  handleListInputSubmit () {
-    console.log('submitted yo');
+  handleListInputSubmit (event) {
+    event.preventDefault();
+    console.log(event.target.value);
+    this.state.pros.push(event.target.value); 
+    this.setState({pros: this.state.pros});
   }
 
   render () {
@@ -30,6 +33,7 @@ class Main extends React.Component {
           name={'Pros'} 
           items={this.state.pros} 
           handleListInputSubmit={this.handleListInputSubmit} 
+
         />
         <List 
           name={'Cons'} 
