@@ -1,9 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const logger = require('morgan');
 
 const PORT = 3000;
 const app = express();
 
+app.use(logger('tiny'));
 app.use(bodyParser.json());
 app.use('/', express.static(__dirname + '/public'));
 
