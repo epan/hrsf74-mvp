@@ -6,30 +6,31 @@ class Main extends React.Component {
   constructor (props) {
     super (props);
     this.state = {
+      prosInput: '',
       pros: [
         'Learn new things',
         'Make new friends'
       ],
+      consInput: '',
       cons: [
         'Time consuming',
         'No income'
       ]
     };
-    this.handleProsSubmit = this.handleProsSubmit.bind(this);
+    this.handleProsChange = this.handleProsChange.bind(this);
     this.handleConsSubmit = this.handleConsSubmit.bind(this);
   }
 
-  handleProsSubmit (event) {
-    // event.preventDefault();
-    console.log(event.target.value);
-    console.dir(event);
-    this.state.pros.push(event.target.value); 
-    this.setState({pros: this.state.pros});
+  handleProsChange (event) {
+    event.preventDefault();
+    this.setState({prosInput: event.target.value});
+    console.log('prosInput is:', this.state.prosInput);
   }
 
   handleConsSubmit (event) {
+    event.preventDefault();
     console.log(event.target.value);
-    console.dir(event);
+    // console.dir(event);
     this.state.cons.push(event.target.value); 
     this.setState({cons: this.state.cons});
   }
@@ -41,9 +42,9 @@ class Main extends React.Component {
         <List 
           name={'Pros'} 
           items={this.state.pros} 
-          handleSubmit={this.handleProsSubmit} 
+          handleChange={this.handleProsChange} 
         />
-        
+
         <List 
           name={'Cons'} 
           items={this.state.cons} 

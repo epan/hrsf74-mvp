@@ -1,7 +1,7 @@
 import React from 'react';
 import ListItem from './ListItem';
 
-const List = ({name, items, handleSubmit}) => {
+const List = ({name, items, handleChange}) => {
 // TODO: Put form in separate component
   return (
     <div>
@@ -11,13 +11,11 @@ const List = ({name, items, handleSubmit}) => {
           return <ListItem title={item} key={index}/>;
         })}
       </ol>
-      <form>
         <input 
-          id={`input${name}`} 
+          id={`input${name}`}
           type="text" 
-          onChange={handleSubmit}
+          onChange={handleChange}
         />
-      </form>
     </div>
   );
 };

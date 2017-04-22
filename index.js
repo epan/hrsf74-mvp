@@ -7,6 +7,31 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 const app = express();
 
+var db = [
+  {
+    name: 'Bootcamp',
+    pros: [
+      'Learn new things',
+      'Make new friends'
+    ],
+    cons: [
+      'Time consuming',
+      'No income'
+    ]
+  },
+  {
+    name: 'Get cat?',
+    pros: [
+      'Like the internet',
+      'Meow'
+    ],
+    cons: [
+      'Sass',
+      'Meow'
+    ]
+  }
+];
+
 app.use(logger('tiny'));
 app.use(bodyParser.json());
 app.use('/', express.static(path.join(__dirname, '/public')));
