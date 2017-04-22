@@ -3,7 +3,10 @@ var ReactDOM = require('react-dom');
 
 function Main () {
   return (
-      <div>Helloww World</div>
+    <div>
+      <h1>Helloww World</h1>
+      <div>Yeewwww</div>
+    </div>
   );
 }
 
