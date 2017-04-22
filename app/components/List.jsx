@@ -10,7 +10,7 @@ const List = ({name, items}) => {
           return <ListItem title={item} key={index}/>;
         })}
       </ol>
-      <form method="POST">
+      <form method="post">
         <input id={`input${name}`} type="text"/>
       </form>
     </div>
