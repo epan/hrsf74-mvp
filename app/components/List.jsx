@@ -1,7 +1,7 @@
 import React from 'react';
 import ListItem from './ListItem';
 
-const List = ({name, items}) => {
+const List = ({name, items, handleListInputSubmit}) => {
   return (
     <div>
       <h2>{`${name}`}</h2>
@@ -11,7 +11,11 @@ const List = ({name, items}) => {
         })}
       </ol>
       <form method="post">
-        <input id={`input${name}`} type="text"/>
+        <input 
+          id={`input${name}`} 
+          type="text" 
+          onFocus={handleListInputSubmit}
+        />
       </form>
     </div>
   );
