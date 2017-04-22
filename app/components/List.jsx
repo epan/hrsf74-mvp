@@ -1,7 +1,8 @@
 import React from 'react';
 import ListItem from './ListItem';
 
-const List = ({name, items, handleListInputSubmit}) => {
+const List = ({name, items, handleSubmit}) => {
+// TODO: Put form in separate component
   return (
     <div>
       <h2>{`${name}`}</h2>
@@ -14,7 +15,7 @@ const List = ({name, items, handleListInputSubmit}) => {
         <input 
           id={`input${name}`} 
           type="text" 
-          onChange={handleListInputSubmit}
+          onChange={handleSubmit}
         />
       </form>
     </div>
