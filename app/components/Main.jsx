@@ -6,16 +6,22 @@ class Main extends React.Component {
   constructor (props) {
     super (props);
     this.state = {
-      pros: [],
-      cons: []
+      pros: [
+        'Learn new things',
+        'Make new friends'
+      ],
+      cons: [
+        'Time consuming',
+        'No income'
+      ]
     };
   }
   render () {
     return (
       <div>
         <h1>Prose and Khans</h1>
-        <List name={'Pros'} />
-        <List name={'Cons'} />
+        <List name={'Pros'} items={this.state.pros} />
+        <List name={'Cons'} items={this.state.cons} />
       </div>
     );
   }
