@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import List from './List.jsx';
+import List from './List';
 
 class Main extends React.Component {
   constructor (props) {
