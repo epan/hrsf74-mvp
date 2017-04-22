@@ -6,7 +6,6 @@ class Main extends React.Component {
   constructor (props) {
     super (props);
     this.state = {
-      name: 'Pros',
       pros: [],
       cons: []
     };
@@ -15,7 +14,8 @@ class Main extends React.Component {
     return (
       <div>
         <h1>Prose and Khans</h1>
-        <List name={this.state.name} />
+        <List name={'Pros'} />
+        <List name={'Cons'} />
       </div>
     );
   }
