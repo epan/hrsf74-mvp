@@ -6,29 +6,31 @@ class Main extends React.Component {
   constructor (props) {
     super (props);
     this.state = {
-      prosInput: '',
       pros: [
-        'Learn new things',
-        'Make new friends'
+        // 'Learn new things',
+        // 'Make new friends'
       ],
-      consInput: '',
       cons: [
-        'Time consuming',
-        'No income'
+        // 'Time consuming',
+        // 'No income'
       ]
     };
-    this.handleProsChange = this.handleProsChange.bind(this);
-    this.handleConsChange = this.handleConsChange.bind(this);
+    this.handleProsSubmit = this.handleProsSubmit.bind(this);
+    this.handleConsSubmit = this.handleConsSubmit.bind(this);
   }
 
-  handleProsChange (event) {
-    this.setState({prosInput: event.target.value});
-    console.log('prosInput is:', this.state.prosInput);
+  handleProsSubmit (input) {
+    let prosList = this.state.pros;
+    prosList.push(input);
+    this.setState({pros: prosList});
+    console.log('pros is:', this.state.pros);
   }
 
-  handleConsChange (event) {
-    this.setState({consInput: event.target.value});
-    console.log('consInput is:', this.state.consInput);
+  handleConsSubmit (input) {
+    let consList = this.state.cons;
+    consList.push(input);
+    this.setState({cons: consList});
+    console.log('cons is:', consList);
   }
 
   render () {
@@ -38,13 +40,13 @@ class Main extends React.Component {
         <List 
           name={'Pros'} 
           items={this.state.pros} 
-          handleChange={this.handleProsChange} 
+          handleSubmit={this.handleProsSubmit} 
         />
 
         <List 
           name={'Cons'} 
           items={this.state.cons} 
-          handleChange={this.handleConsChange} 
+          handleSubmit={this.handleConsSubmit} 
         />
       </div>
     );
