@@ -51,11 +51,13 @@ class Main extends React.Component {
     }); 
   }
 
-  handleItemDelete (itemId) {
-    console.log(`${itemId} clicked`);
-    // onClick for list items,
-    // 1. delete from DB
-    // 2. update app state
+  handleItemDelete (_id) {
+    // TODO: How to use axios.delete without data arg
+    axios.post('/delete', {_id})
+    .then(() => {
+      this.getPros();
+      this.getCons();
+    });
   }
 
   render () {

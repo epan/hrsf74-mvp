@@ -42,3 +42,11 @@ app.post('/submit', (req, res) => {
     res.send(200);
   });
 });
+
+app.post('/delete', (req, res) => {
+  Item.remove(req.body)
+  .exec((err) => {
+    if (err) { return console.error(err); }
+    res.end();
+  });
+});
