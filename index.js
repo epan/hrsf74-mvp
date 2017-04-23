@@ -3,11 +3,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const path = require('path');
+const Item = require('./db/models/Item');
 
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-var db = [
+var dbCONST = [
   {
     name: 'Bootcamp',
     pros: [
@@ -44,7 +45,13 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
-app.post('/', (req, res) => {
-  console.log(req.body);
+app.get('/pros', (req, res) => {
+  // go to database and retrieve all pros
+  // res.send(list of pros)
+});
+
+app.post('/pros', (req, res) => {
+  console.log('Made it to the server ---->', req.body);
+  // use mongoos to send req.body to DB
   res.send(200);
 });

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import List from './List';
+import axios from 'axios';
 
 class Main extends React.Component {
   constructor (props) {
@@ -19,11 +20,27 @@ class Main extends React.Component {
     this.handleConsSubmit = this.handleConsSubmit.bind(this);
   }
 
+  getPros () {
+    axios.get('/pros')
+      .then((data) => {
+
+        // Update state with db data response
+        // state update will re-render app
+      });
+  }
+
   handleProsSubmit (input) {
-    let prosList = this.state.pros;
-    prosList.push(input);
-    this.setState({pros: prosList});
-    console.log('pros is:', this.state.pros);
+    axios.post('/pros', {input})
+      .then(() => {
+        console.log('Posting!');
+        // axios.get('/pros')
+        // .then((data) => {
+        //   let prosList = this.state.pros;
+        //   prosList.push(input);
+        //   this.setState({pros: prosList});
+        // });
+      });
+    console.log('pros is:', input);
   }
 
   handleConsSubmit (input) {
