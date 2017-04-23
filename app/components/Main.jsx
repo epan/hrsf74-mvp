@@ -29,18 +29,18 @@ class Main extends React.Component {
       });
   }
 
-  handleProsSubmit (input) {
-    axios.post('/pros', {input})
+  handleProsSubmit (text) {
+    axios.post('/pros', {text})
       .then(() => {
         console.log('Posting!');
         // axios.get('/pros')
         // .then((data) => {
         //   let prosList = this.state.pros;
-        //   prosList.push(input);
+        //   prosList.push(text);
         //   this.setState({pros: prosList});
         // });
       });
-    console.log('pros is:', input);
+    console.log('pros is:', text);
   }
 
   handleConsSubmit (input) {
