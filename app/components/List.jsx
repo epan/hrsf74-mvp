@@ -6,7 +6,7 @@ const List = ({name, items, handleSubmit, handleItemDelete}) => {
     <div className={`list-container ${name} col`}>
       <h2>{`${name}`}</h2>
       <ol>
-        {items.map((item, index) => {
+        {items.map((item) => {
           return <ListItem 
             title={item.text} 
             key={item._id}
