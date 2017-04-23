@@ -19,7 +19,7 @@ const List = ({name, items, handleSubmit}) => {
         <input 
           id={`input${name}`}
           type="text" 
-          placeholder={`Type a ${name} and press return`}
+          placeholder={`Type ${name}, hit Return`}
         />
       </form>
     </div>
