@@ -71,9 +71,9 @@ class Main extends React.Component {
   render () {
     return (
       <div className="container">
-        <div className="row">
+        <div className="row mt-1 mb-4">
           <div className="col">
-            <h1>Prose and Khans</h1>
+            <h1 className="display-1">Prose and Khans™</h1>
           </div>
         </div>
         <div className="row">

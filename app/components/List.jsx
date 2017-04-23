@@ -15,17 +15,23 @@ const List = ({name, items, handleSubmit, handleItemDelete}) => {
           />;
         })}
       </ol>
-      <form onSubmit={(e) => {
-        e.preventDefault(); 
-        let inputField = document.getElementById(`input${name}`);
-        handleSubmit(inputField.value);
-        inputField.value = '';
-      }}>
-        <input 
-          id={`input${name}`}
-          type="text" 
-          placeholder={`Type ${name}, hit Return`}
-        />
+      <form 
+        onSubmit={(e) => {
+          e.preventDefault(); 
+          let inputField = document.getElementById(`input${name}`);
+          handleSubmit(inputField.value);
+          inputField.value = '';
+        }}
+        autoComplete="off"
+      >
+        <div className="form-group">
+          <input 
+            id={`input${name}`}
+            className="form-control"
+            type="text" 
+            placeholder={`Type ${name}, hit Return`}
+          />
+        </div>
       </form>
     </div>
   );
