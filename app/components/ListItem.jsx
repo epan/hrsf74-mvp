@@ -4,8 +4,7 @@ const ListItem = ({title, id, handleItemDelete}) => {
   return (
     <li 
       className="list-item" 
-      onClick={handleItemDelete}
-      data-id={id}
+      onClick={() => { handleItemDelete(id); }}
     >
       {title}
     </li>
