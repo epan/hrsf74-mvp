@@ -51,11 +51,9 @@ app.get('/pros', (req, res) => {
 });
 
 app.post('/pros', (req, res) => {
-  console.log('Made it to the server ---->', req.body);
-  // use mongoose to send req.body to DB
   new Item(req.body).save(function (err, item) {
     if (err) { return console.error(err); }
-    console.log('This was inserted:', item);
+    console.log('Pro inserted to DB:', item);
   });
   res.send(200);
 });

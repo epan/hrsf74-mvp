@@ -30,9 +30,13 @@ class Main extends React.Component {
   }
 
   handleProsSubmit (text) {
-    axios.post('/pros', {text})
+    let pro = {
+      kind: 'pro',
+      text: text
+    };
+
+    axios.post('/pros', pro)
       .then(() => {
-        console.log('Posting!');
         // axios.get('/pros')
         // .then((data) => {
         //   let prosList = this.state.pros;
@@ -40,7 +44,7 @@ class Main extends React.Component {
         //   this.setState({pros: prosList});
         // });
       });
-    console.log('pros is:', text);
+    console.log('Pro sent to DB:', text);
   }
 
   handleConsSubmit (input) {
