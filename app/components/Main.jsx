@@ -16,8 +16,8 @@ class Main extends React.Component {
 
   getPros () {
     axios.get('/pros')
-    .then((pros) => {
-      console.log('got pros:', pros);
+    .then(({data}) => {
+      this.setState({pros: data});
     });
   }
 
@@ -28,10 +28,7 @@ class Main extends React.Component {
     };
     axios.post('/pros', pro)
     .then(() => {
-      axios.get('/pros')
-      .then(({data}) => {
-        this.setState({pros: data});
-      });
+      this.getPros();
     });
   }
 
