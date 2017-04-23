@@ -12,6 +12,7 @@ class Main extends React.Component {
     };
     this.handleProsSubmit = this.handleProsSubmit.bind(this);
     this.handleConsSubmit = this.handleConsSubmit.bind(this);
+    this.handleItemDelete = this.handleItemDelete.bind(this);
   }
 
   getPros () {
@@ -50,6 +51,13 @@ class Main extends React.Component {
     }); 
   }
 
+  handleItemDelete (itemId) {
+    console.log(`${itemId} clicked`);
+    // onClick for list items,
+    // 1. delete from DB
+    // 2. update app state
+  }
+
   render () {
     return (
       <div>
@@ -58,12 +66,14 @@ class Main extends React.Component {
           name={'Pros'} 
           items={this.state.pros} 
           handleSubmit={this.handleProsSubmit} 
+          handleItemDelete={this.handleItemDelete}
         />
 
         <List 
           name={'Cons'} 
           items={this.state.cons} 
           handleSubmit={this.handleConsSubmit} 
+          handleItemDelete={this.handleItemDelete}
         />
       </div>
     );
