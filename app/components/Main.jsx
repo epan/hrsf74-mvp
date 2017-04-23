@@ -7,10 +7,7 @@ class Main extends React.Component {
   constructor (props) {
     super (props);
     this.state = {
-      pros: [
-        // 'Learn new things',
-        // 'Make new friends'
-      ],
+      pros: [],
       cons: [
         // 'Time consuming',
         // 'No income'
@@ -39,7 +36,7 @@ class Main extends React.Component {
         axios.get('/pros')
           .then(({data}) => {
             // Update state with db data response
-            
+            this.setState({pros: data});
           });
         // axios.get('/pros')
         // .then((data) => {

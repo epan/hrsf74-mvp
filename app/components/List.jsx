@@ -7,7 +7,7 @@ const List = ({name, items, handleSubmit}) => {
       <h2>{`${name}`}</h2>
       <ol>
         {items.map((item, index) => {
-          return <ListItem title={item} key={index}/>;
+          return <ListItem title={item.text} key={item._id}/>;
         })}
       </ol>
       <form onSubmit={(e) => {
