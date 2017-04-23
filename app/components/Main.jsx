@@ -15,6 +15,15 @@ class Main extends React.Component {
     this.handleItemDelete = this.handleItemDelete.bind(this);
   }
 
+  componentDidMount () {
+    this.getAllItems();
+  }
+
+  getAllItems () {
+    this.getPros();
+    this.getCons();
+  }
+
   getPros () {
     axios.get('/pros')
     .then(({data}) => {
@@ -55,8 +64,7 @@ class Main extends React.Component {
     // TODO: How to use axios.delete without data arg
     axios.post('/delete', {_id})
     .then(() => {
-      this.getPros();
-      this.getCons();
+      this.getAllItems();
     });
   }
 
