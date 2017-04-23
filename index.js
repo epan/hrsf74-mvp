@@ -8,31 +8,6 @@ const Item = require('./db/models/Item');
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-var dbCONST = [
-  {
-    name: 'Bootcamp',
-    pros: [
-      'Learn new things',
-      'Make new friends'
-    ],
-    cons: [
-      'Time consuming',
-      'No income'
-    ]
-  },
-  {
-    name: 'Get cat?',
-    pros: [
-      'Like the internet',
-      'Meow'
-    ],
-    cons: [
-      'Sass',
-      'Meow'
-    ]
-  }
-];
-
 app.use(logger('tiny'));
 app.use(bodyParser.json());
 app.use('/', express.static(path.join(__dirname, '/public')));
@@ -45,6 +20,14 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
+app.get('/cons', (req, res) => {
+  Item.find({kind: 'con'})
+  .exec((err, cons) => {
+    if (err) { console.error(err); }
+    res.send(cons);
+  });
+});
+
 app.get('/pros', (req, res) => {
   Item.find({kind: 'pro'})
   .exec((err, pros) => {
@@ -53,7 +36,7 @@ app.get('/pros', (req, res) => {
   });
 });
 
-app.post('/pros', (req, res) => {
+app.post('/submit', (req, res) => {
   new Item(req.body).save(function (err, item) {
     if (err) { return console.error(err); }
     res.send(200);

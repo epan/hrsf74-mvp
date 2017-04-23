@@ -21,22 +21,33 @@ class Main extends React.Component {
     });
   }
 
-  handleProsSubmit (text) {
+  getCons () {
+    axios.get('/cons')
+    .then(({data}) => {
+      this.setState({cons: data});
+    });
+  }
+
+  handleProsSubmit (input) {
     let pro = {
       kind: 'pro',
-      text: text,
+      text: input,
     };
-    axios.post('/pros', pro)
+    axios.post('/submit', pro)
     .then(() => {
       this.getPros();
     });
   }
 
   handleConsSubmit (input) {
-    let consList = this.state.cons;
-    consList.push(input);
-    this.setState({cons: consList});
-    console.log('cons is:', consList);
+    let con = {
+      kind: 'con',
+      text: input
+    };
+    axios.post('/submit', con)
+    .then(() => {
+      this.getCons();
+    }); 
   }
 
   render () {
