@@ -47,16 +47,15 @@ app.get('/', (req, res) => {
 
 app.get('/pros', (req, res) => {
   Item.find({kind: 'pro'})
-    .exec((err, pros) => {
-      if (err) { console.error(err); }
-      res.send(pros);
-    });
+  .exec((err, pros) => {
+    if (err) { console.error(err); }
+    res.send(pros);
+  });
 });
 
 app.post('/pros', (req, res) => {
   new Item(req.body).save(function (err, item) {
     if (err) { return console.error(err); }
-    console.log('Pro inserted to DB:', item);
+    res.send(200);
   });
-  res.send(200);
 });

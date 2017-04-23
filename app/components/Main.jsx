@@ -8,10 +8,7 @@ class Main extends React.Component {
     super (props);
     this.state = {
       pros: [],
-      cons: [
-        // 'Time consuming',
-        // 'No income'
-      ]
+      cons: []
     };
     this.handleProsSubmit = this.handleProsSubmit.bind(this);
     this.handleConsSubmit = this.handleConsSubmit.bind(this);
@@ -19,11 +16,9 @@ class Main extends React.Component {
 
   getPros () {
     axios.get('/pros')
-      .then((pros) => {
-        console.log('got pros:', pros);
-        // Update state with db data response
-        // state update will re-render app
-      });
+    .then((pros) => {
+      console.log('got pros:', pros);
+    });
   }
 
   handleProsSubmit (text) {
@@ -32,20 +27,12 @@ class Main extends React.Component {
       text: text,
     };
     axios.post('/pros', pro)
-      .then(() => {
-        axios.get('/pros')
-          .then(({data}) => {
-            // Update state with db data response
-            this.setState({pros: data});
-          });
-        // axios.get('/pros')
-        // .then((data) => {
-        //   let prosList = this.state.pros;
-        //   prosList.push(text);
-        //   this.setState({pros: prosList});
-        // });
+    .then(() => {
+      axios.get('/pros')
+      .then(({data}) => {
+        this.setState({pros: data});
       });
-    console.log('Pro sent to DB:', text);
+    });
   }
 
   handleConsSubmit (input) {
