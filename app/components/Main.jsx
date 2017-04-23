@@ -70,21 +70,27 @@ class Main extends React.Component {
 
   render () {
     return (
-      <div>
-        <h1>Prose and Khans</h1>
-        <List 
-          name={'Pros'} 
-          items={this.state.pros} 
-          handleSubmit={this.handleProsSubmit} 
-          handleItemDelete={this.handleItemDelete}
-        />
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <h1>Prose and Khans</h1>
+          </div>
+        </div>
+        <div className="row">
+          <List 
+            name={'Pros'} 
+            items={this.state.pros} 
+            handleSubmit={this.handleProsSubmit} 
+            handleItemDelete={this.handleItemDelete}
+          />
 
-        <List 
-          name={'Cons'} 
-          items={this.state.cons} 
-          handleSubmit={this.handleConsSubmit} 
-          handleItemDelete={this.handleItemDelete}
-        />
+          <List 
+            name={'Cons'} 
+            items={this.state.cons} 
+            handleSubmit={this.handleConsSubmit} 
+            handleItemDelete={this.handleItemDelete}
+          />
+        </div>
       </div>
     );
   }

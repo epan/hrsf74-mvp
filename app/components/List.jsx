@@ -3,7 +3,7 @@ import ListItem from './ListItem';
 
 const List = ({name, items, handleSubmit, handleItemDelete}) => {
   return (
-    <div className={`list-container ${name}`}>
+    <div className={`list-container ${name} col`}>
       <h2>{`${name}`}</h2>
       <ol>
         {items.map((item, index) => {
