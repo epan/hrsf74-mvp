@@ -22,8 +22,8 @@ class Main extends React.Component {
 
   getPros () {
     axios.get('/pros')
-      .then((data) => {
-
+      .then((pros) => {
+        console.log('got pros:', pros);
         // Update state with db data response
         // state update will re-render app
       });
@@ -32,11 +32,15 @@ class Main extends React.Component {
   handleProsSubmit (text) {
     let pro = {
       kind: 'pro',
-      text: text
+      text: text,
     };
-
     axios.post('/pros', pro)
       .then(() => {
+        axios.get('/pros')
+          .then(({data}) => {
+            // Update state with db data response
+            
+          });
         // axios.get('/pros')
         // .then((data) => {
         //   let prosList = this.state.pros;

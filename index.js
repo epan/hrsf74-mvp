@@ -46,8 +46,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/pros', (req, res) => {
-  // go to database and retrieve all pros
-  // res.send(list of pros)
+  Item.find({kind: 'pro'})
+    .exec((err, pros) => {
+      if (err) { console.error(err); }
+      res.send(pros);
+    });
 });
 
 app.post('/pros', (req, res) => {
