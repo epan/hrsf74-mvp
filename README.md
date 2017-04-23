@@ -16,7 +16,7 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
  
-## Show don't tell
+## "Show don't tell"
 ![screencast demo](https://d2ppvlu71ri8gs.cloudfront.net/items/3n1m3f432F1B1h141K3a/Screen%20Recording%202017-04-23%20at%2004.27%20PM.gif?v=1c994516)
 
 ## Heading ##
